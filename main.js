@@ -15,7 +15,7 @@ let  userBtn = document.querySelector(".user_button")
 let userHeader = document.querySelector(".header-one")
 userBtn.addEventListener("click", function userCreator(){
     
-    userHeader.innerText = userName.value
+    userHeader.innerText = "Player: " + userName.value
 
 }
 
@@ -76,6 +76,7 @@ function getWinner (playerMove, computerMove){
     } else if (playerMove === "rock" && computerMove === "scissors") {
         //alert("1")
         wins++
+        
     } else if (playerMove === "scissors" && computerMove === "paper") {
         //alert("1")
         wins++
@@ -98,6 +99,10 @@ function getWinner (playerMove, computerMove){
     let lossTotal = document.querySelector(".losses") 
 
     lossTotal.innerText = "Losses: " + losses.toString()
+
+    
+
+
     //playAgain = confirm(`Games Played: ${games} \nWins: ${wins} \nLosses: ${losses} \nFancy another game?`) 
 }
 
