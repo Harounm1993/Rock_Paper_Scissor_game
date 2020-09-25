@@ -7,7 +7,7 @@ let computerMove = "paper";
 let randNum = Math.random()
 let playAgain = true; 
 function getWinner (playerMove, computerMove){
-    while ( playAgain === true) {
+    while (playAgain === true) {
         
     // make ranges 
 
@@ -37,10 +37,11 @@ function getWinner (playerMove, computerMove){
     }
     playAgain = confirm("fancy another game?") 
 }
-getWinner(playerMove,computerMove)
+
 
 //console.log(result);
-
+}
+getWinner(playerMove,computerMove)
 //Using `prompt`, get a user inputted value for the player move.
 //Then call your function with that value and the hard coded computer move. Display the result using `alert`.
 
@@ -49,4 +50,3 @@ getWinner(playerMove,computerMove)
 
 
 
-}
