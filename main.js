@@ -13,9 +13,9 @@ let losses = 0
 let userName = document.querySelector(".user_name")
 let  userBtn = document.querySelector(".user_button")
 let userHeader = document.querySelector(".header-one")
-userName.addEventListener("click", function userCreator(){
+userBtn.addEventListener("click", function userCreator(){
     
-    userHeader.innerText = userName.innerText
+    userHeader.innerText = userName.value
 
 }
 
