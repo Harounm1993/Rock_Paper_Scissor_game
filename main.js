@@ -52,6 +52,13 @@ function getWinner (playerMove, computerMove){
 
 //console.log(result);
 }
+
+let rock = document.querySelector(".rock")
+
+rock.addEventListener("click",function rockMove(e) {
+    console.log(e.target)
+    console.log(e) 
+} )
 getWinner(playerMove,computerMove)
 //Using `prompt`, get a user inputted value for the player move.
 //Then call your function with that value and the hard coded computer move. Display the result using `alert`.
@@ -60,8 +67,5 @@ getWinner(playerMove,computerMove)
 //(`Math.random()` might be useful...). Use that function to make a dynamic game where the computer move is randomly chosen every time.
 
 
-let rock = document.querySelector(".rock")
 
-playermove = rock.innerText
 
-function 
