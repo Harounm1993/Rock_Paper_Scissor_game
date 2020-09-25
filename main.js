@@ -1,12 +1,27 @@
-let playerMove = "paper";
+let playerMove = "paper"
 let computerMove = "paper";
 
 // if playerMove = computerMove then draw
 // if playerMove = Scissors && computerMove = Paper then Player wins
 
+let randNum = Math.random()
+
 function getWinner (playerMove, computerMove){
     
+    // make ranges 
+
+    if (randNum < 0.333) {
+        computerMove = "rock"
+    } else if (0.333 <= randNum && randNum < 0.666) {
+        computerMove = "scissors"
+    } else if (0.666 <= randNum){
+        computerMove = "paper"
+    }
+
     playerMove = prompt("3... 2... 1...")
+
+    console.log(randNum)
+    console.log(computerMove)
 
     if(playerMove === computerMove) {
         alert("0")
@@ -26,3 +41,6 @@ getWinner(playerMove,computerMove)
 
 //Using `prompt`, get a user inputted value for the player move.
 //Then call your function with that value and the hard coded computer move. Display the result using `alert`.
+
+//Write a function that generates a random computer move 
+//(`Math.random()` might be useful...). Use that function to make a dynamic game where the computer move is randomly chosen every time.
