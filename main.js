@@ -4,12 +4,17 @@ let computerMove = "paper";
 // if playerMove = computerMove then draw
 // if playerMove = Scissors && computerMove = Paper then Player wins
 
-let randNum = Math.random()
+
 let playAgain = true; 
+let games = 0
+let wins = 0
+let losses = 0
+
 function getWinner (playerMove, computerMove){
     while (playAgain === true) {
         
     // make ranges 
+    let randNum = Math.random()
 
     if (randNum < 0.333) {
         computerMove = "rock"
@@ -24,18 +29,24 @@ function getWinner (playerMove, computerMove){
     console.log(randNum)
     console.log(computerMove)
 
+    games++ // add one to games played
+
     if(playerMove === computerMove) {
         alert("0")
     } else if (playerMove === "rock" && computerMove === "scissors") {
         alert("1")
+        wins++
     } else if (playerMove === "scissors" && computerMove === "paper") {
         alert("1")
+        wins++
     } else if (playerMove === "paper" && computerMove === "rock") {
         alert("1")
+        wins++
     } else {
         alert("-1")
+        losses++
     }
-    playAgain = confirm("fancy another game?") 
+    playAgain = confirm(`Games Played: ${games} \nWins: ${wins} \nLosses: ${losses} \nFancy another game?`) 
 }
 
 
@@ -49,4 +60,8 @@ getWinner(playerMove,computerMove)
 //(`Math.random()` might be useful...). Use that function to make a dynamic game where the computer move is randomly chosen every time.
 
 
+let rock = document.querySelector(".rock")
 
+playermove = rock.innerText
+
+function 
