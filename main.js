@@ -10,10 +10,34 @@ let games = 0
 let wins = 0
 let losses = 0
 
+let rock = document.querySelector(".rock")
+
+rock.addEventListener("click",function rockMove(){
+    playerMove = "rock"
+    getWinner(playerMove,computerMove)
+} )
+
+let scissors = document.querySelector(".scissors")
+
+scissors.addEventListener("click",function scissorsMove(){
+    playerMove = "scissors"
+    getWinner(playerMove,computerMove)
+} )
+
+let paper = document.querySelector(".paper")
+
+paper.addEventListener("click",function paperMove(){
+    playerMove = "paper"
+    getWinner(playerMove,computerMove)
+} )
+
 function getWinner (playerMove, computerMove){
-    while (playAgain === true) {
+    //while (playAgain === true) {
         
     // make ranges 
+
+    
+
     let randNum = Math.random()
 
     if (randNum < 0.333) {
@@ -24,42 +48,52 @@ function getWinner (playerMove, computerMove){
         computerMove = "paper"
     }
 
-    playerMove = prompt("3... 2... 1...")
+    //playerMove = prompt("3... 2... 1...")
 
     console.log(randNum)
     console.log(computerMove)
 
     games++ // add one to games played
 
+    
+
     if(playerMove === computerMove) {
-        alert("0")
+        //alert("0")
     } else if (playerMove === "rock" && computerMove === "scissors") {
-        alert("1")
+        //alert("1")
         wins++
     } else if (playerMove === "scissors" && computerMove === "paper") {
-        alert("1")
+        //alert("1")
         wins++
     } else if (playerMove === "paper" && computerMove === "rock") {
-        alert("1")
+        //alert("1")
         wins++
     } else {
-        alert("-1")
+        //alert("-1")
         losses++
     }
-    playAgain = confirm(`Games Played: ${games} \nWins: ${wins} \nLosses: ${losses} \nFancy another game?`) 
+
+    let gameTotal = document.querySelector(".games_played") 
+
+    gameTotal.innerText = "Games Played: " + games.toString()
+
+    let winTotal = document.querySelector(".wins") 
+
+    winTotal.innerText = "Wins: " + wins.toString()
+
+    let lossTotal = document.querySelector(".losses") 
+
+    lossTotal.innerText = "Losses: " + losses.toString()
+    //playAgain = confirm(`Games Played: ${games} \nWins: ${wins} \nLosses: ${losses} \nFancy another game?`) 
 }
 
 
 //console.log(result);
-}
 
-let rock = document.querySelector(".rock")
+//}
 
-rock.addEventListener("click",function rockMove(e) {
-    console.log(e.target)
-    console.log(e) 
-} )
-getWinner(playerMove,computerMove)
+
+
 //Using `prompt`, get a user inputted value for the player move.
 //Then call your function with that value and the hard coded computer move. Display the result using `alert`.
 
